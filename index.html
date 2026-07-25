@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding Invitation | Ravi Kant & Apurva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Parisienne&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <button id="langToggle" class="icon-btn lang-btn" type="button" aria-label="Switch to Hindi">हि</button>
+      <button id="musicToggle" class="icon-btn music-btn" type="button" aria-label="Play music" aria-pressed="false">♫</button>
+    </header>
+
+    <aside class="side-side left-side"></aside>
+    <aside class="side-side right-side"></aside>
+
+    <main class="invite-app">
+      <section class="envelope-stage" id="envelopeStage">
+        <div class="floating-petal petal-1"></div>
+        <div class="floating-petal petal-2"></div>
+        <div class="floating-petal petal-3"></div>
+        <div class="floating-petal petal-4"></div>
+
+        <button class="open-invite-btn" id="openInviteBtn" type="button">Open Invite</button>
+
+        <div class="envelope-wrap" id="envelopeWrap" aria-hidden="true">
+          <div class="envelope back"></div>
+          <div class="envelope front"></div>
+          <div class="envelope flap"></div>
+        </div>
+
+        <div class="celebration-layer" id="celebrationLayer" aria-hidden="true"></div>
+      </section>
+
+      <section class="content-section hidden" id="contentSection">
+        <div class="royal-frame">
+          <div class="ornament top-left"></div>
+          <div class="ornament top-right"></div>
+          <div class="ornament bottom-left"></div>
+          <div class="ornament bottom-right"></div>
+
+          <section class="ganesha-section" id="ganeshaSection">
+            <img src="assets/images/ganesha.png" alt="Lord Ganesha illustration" class="ganesha-img" />
+            <div class="mantra-block">
+              <div class="mantra-title">श्री गणेशाय नमः</div>
+              <div class="mantra-text">
+                वक्रतुण्ड महाकाय सूर्यकोटि समप्रभः।<br>
+                निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥
+              </div>
+            </div>
+          </section>
+
+          <img src="assets/images/baarat.png" alt="Baarat" class="baarat-image" />
+
+          <section class="intro-block english-only">
+            <p class="script-line">With the heavenly blessings of the Almighty,</p>
+            <p class="lead-line">Two hearts, two families, and one beautiful destiny are coming together.</p>
+            <p>Mrs. Rekha Singh &amp; Mr. Laxman Singh joyfully invite you to celebrate the marriage of their beloved son</p>
+          </section>
+
+          <section class="intro-block hindi-only hidden">
+            <p class="script-line">परमपिता परमात्मा की असीम अनुकम्पा से,</p>
+            <p class="lead-line">दो दिल, दो परिवार, और एक सुंदर नियति एक साथ आ रही है।</p>
+            <p>श्रीमती रेखा सिंह एवं श्री लक्ष्मण सिंह अपने प्रिय सुपुत्र के विवाह उत्सव में आपको सादर आमंत्रित करते हैं।</p>
+          </section>
+
+          <section class="names-panel">
+            <div class="name-line english-only">
+              <span class="name-script">Ravi Kant</span>
+              <div class="detail-line">Grand son of<br>Late Mrs. Atar Kali &amp; Late Mr. Tara Chand</div>
+            </div>
+
+            <div class="name-line hindi-only hidden">
+              <span class="name-script">चि० रवि कान्त</span>
+              <div class="detail-line">स्व० श्रीमती अतर कली एवं स्व० श्री तारा चन्द के<br>सुपौत्र</div>
+            </div>
+
+            <div class="to-label english-only">— to —</div>
+            <div class="to-label hindi-only hidden">— संग —</div>
+
+            <div class="name-line english-only">
+              <span class="name-script bride">Apurva</span>
+              <div class="detail-line">D/O Mrs. Bobesh Dhiman &amp; Mr. Susheel Kumar<br>Grand daughter of<br>Late Mrs. Baladevi &amp; Late Mr. Raghunath Dhiman</div>
+            </div>
+
+            <div class="name-line hindi-only hidden">
+              <span class="name-script bride">आयु० अपूर्वा</span>
+              <div class="detail-line">श्रीमती बोबेश धीमान एवं श्री सुशील कुमार की पुत्री<br>स्वर्गीय श्री रघुनाथ धीमान एवं स्वर्गीया श्रीमती बालादेवी की<br>सुपौत्री</div>
+            </div>
+          </section>
+
+          <section class="photo-grid">
+            <article class="profile-card">
+              <div class="portrait-top"></div>
+              <img src="assets/images/groom.jpg" alt="Ravi Kant portrait" class="profile-img" />
+            </article>
+
+            <article class="profile-card">
+              <div class="portrait-top"></div>
+              <img src="assets/images/bride.png" alt="Apurva portrait" class="profile-img" />
+            </article>
+          </section>
+
+          <section class="details-panel">
+            <div class="details-lead english-only">
+              Love is a journey best shared with those who mean the most. We would be absolutely honored to have you join us, bless the newlyweds, and make this day unforgettable.
+            </div>
+            <div class="details-lead hindi-only hidden">
+              प्रेम एक ऐसी यात्रा है जिसे अपने प्रियजनों के साथ साझा करना सबसे सुंदर होता है। आपकी उपस्थिति, आशीर्वाद और स्नेह इस दिन को अविस्मरणीय बना देंगे।
+            </div>
+
+            <div class="event-grid">
+              
+              <!-- Group 1: When Box + Calendar -->
+              <div class="event-group">
+                <div class="event-box">
+                  <span class="event-label english-only">When</span>
+                  <span class="event-label hindi-only hidden">समय</span>
+                  <strong class="event-value english-only">Tuesday, 24th November 2026</strong>
+                  <strong class="event-value hindi-only hidden">मंगलवार, 24 नवम्बर 2026</strong>
+                  
+                  <!-- Added timeline details here -->
+                  <small class="english-only">6:00 PM - Baarat<br>8:00 PM - Dinner</small>
+                  <small class="hindi-only hidden">शाम 6:00 बजे - बारात<br>रात 8:00 बजे - रात्रिभोज</small>
+                </div>
+                <!-- November Calendar Image -->
+                <img src="assets/images/november.png" alt="November 2026 Calendar" class="calendar-preview" />
+              </div>
+
+              <!-- Group 2: Where Box + Google Maps -->
+              <div class="event-group">
+                <div class="event-box">
+                  <span class="event-label english-only">Where</span>
+                  <span class="event-label hindi-only hidden">स्थान</span>
+                  <strong class="event-value english-only">
+                    <a href="https://maps.app.goo.gl/Ud8oNFg3giiPdD5u5" target="_blank" rel="noopener" class="venue-link">Abhinandan Palace</a>
+                  </strong>
+                  <strong class="event-value hindi-only hidden">
+                    <a href="https://maps.app.goo.gl/Ud8oNFg3giiPdD5u5" target="_blank" rel="noopener" class="venue-link">अभिनन्दन पैलेस</a>
+                  </strong>
+                  <small class="english-only">State Highway 59, Roorkee Road, Muzaffarnagar</small>
+                  <small class="hindi-only hidden">स्टेट हाईवे 59, रूड़की रोड, मुज़फ्फरनगर</small>
+                </div>
+                <!-- Google Maps Iframe Embed -->
+                <div class="map-container">
+                  <iframe 
+                    src="https://maps.google.com/maps?q=Abhinandan%20Palace,%20Roorkee%20Rd,%20Muzaffarnagar&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                    class="map-iframe" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Google Maps Location for Abhinandan Palace">
+                  </iframe>
+                </div>
+              </div>
+
+            </div>
+
+            <p class="closing-note english-only">Host: Mr. Laxman Singh</p>
+            <p class="closing-note hindi-only hidden">आयोजक: श्री लक्ष्मण सिंह</p>
+          </section>
+
+          <section class="thankyou-panel">
+            <h3 class="english-only">Thank You</h3>
+            <h3 class="hindi-only hidden">आभार</h3>
+            <p class="english-only">Your presence and blessings will make our celebration truly special.</p>
+            <p class="hindi-only hidden">आपकी उपस्थिति और आशीर्वाद हमारे उत्सव को और भी सुंदर बना देंगे।</p>
+          </section>
+
+          <section class="countdown-section">
+            <div class="countdown-title english-only">Countdown to the Wedding</div>
+            <div class="countdown-title hindi-only hidden">विवाह तक शेष समय</div>
+
+            <div class="clock-shell">
+              <div class="clock-glow clock-glow-a"></div>
+              <div class="clock-glow clock-glow-b"></div>
+              <div class="digital-clock">
+                <div class="clock-box"><span id="days">00</span><small>Days</small></div>
+                <div class="clock-box"><span id="hours">00</span><small>Hours</small></div>
+                <div class="clock-box"><span id="minutes">00</span><small>Minutes</small></div>
+                <div class="clock-box"><span id="seconds">00</span><small>Seconds</small></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="footer-actions">
+            <a class="action-btn venue-btn" href="https://maps.app.goo.gl/Ud8oNFg3giiPdD5u5" target="_blank" rel="noopener">
+              <span class="btn-label english-only">Venue</span>
+              <span class="btn-label hindi-only hidden">विवाह स्थल</span>
+            </a>
+
+            <a class="action-btn wa-btn" href="https://wa.me/919454404754" target="_blank" rel="noopener" aria-label="WhatsApp 9454404754">
+              <span class="wa-icon">✆</span>
+              <span class="wa-number">9454404754</span>
+            </a>
+
+            <a class="action-btn wa-btn" href="https://wa.me/918299153513" target="_blank" rel="noopener" aria-label="WhatsApp 8299153513">
+              <span class="wa-icon">✆</span>
+              <span class="wa-number">8299153513</span>
+            </a>
+          </section>
+        </div>
+      </section>
+
+      <audio id="bgAudio" preload="auto" loop autoplay playsinline>
+        <source src="assets/audio/music.mp3" type="audio/mpeg" />
+      </audio>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
