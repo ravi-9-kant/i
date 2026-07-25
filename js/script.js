@@ -1,0 +1,118 @@
+const langToggle = document.getElementById('langToggle');
+const musicToggle = document.getElementById('musicToggle');
+const bgAudio = document.getElementById('bgAudio');
+const body = document.body;
+
+const openInviteBtn = document.getElementById('openInviteBtn');
+const envelopeWrap = document.getElementById('envelopeWrap');
+const celebrationLayer = document.getElementById('celebrationLayer');
+const contentSection = document.getElementById('contentSection');
+
+const dateTarget = new Date('2026-11-24T19:00:00');
+const daysEl = document.getElementById('days');
+const hoursEl = document.getElementById('hours');
+const minutesEl = document.getElementById('minutes');
+const secondsEl = document.getElementById('seconds');
+
+function pad(num) {
+  return String(num).padStart(2, '0');
+}
+
+function updateCountdown() {
+  const diff = dateTarget - new Date();
+
+  if (diff <= 0) {
+    daysEl.textContent = '00';
+    hoursEl.textContent = '00';
+    minutesEl.textContent = '00';
+    secondsEl.textContent = '00';
+    return;
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  daysEl.textContent = pad(days);
+  hoursEl.textContent = pad(hours);
+  minutesEl.textContent = pad(minutes);
+  secondsEl.textContent = pad(seconds);
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+function setLanguage(mode) {
+  const english = mode === 'en';
+  body.classList.toggle('hindi-mode', !english);
+
+  document.querySelectorAll('.english-only').forEach(el => el.classList.toggle('hidden', !english));
+  document.querySelectorAll('.hindi-only').forEach(el => el.classList.toggle('hidden', english));
+
+  langToggle.textContent = english ? 'हि' : 'EN';
+  langToggle.setAttribute('aria-label', english ? 'Switch to Hindi' : 'Switch to English');
+  musicToggle.setAttribute('aria-label', english ? 'Play music' : 'संगीत चलाएँ');
+}
+
+langToggle.addEventListener('click', () => {
+  setLanguage(body.classList.contains('hindi-mode') ? 'en' : 'hi');
+});
+
+async function tryAutoplay() {
+  try {
+    await bgAudio.play();
+    musicToggle.textContent = '❚❚';
+    musicToggle.setAttribute('aria-pressed', 'true');
+  } catch (error) {
+    musicToggle.textContent = '♫';
+    musicToggle.setAttribute('aria-pressed', 'false');
+  }
+}
+
+musicToggle.addEventListener('click', async () => {
+  if (bgAudio.paused) {
+    try {
+      await bgAudio.play();
+      musicToggle.textContent = '❚❚';
+      musicToggle.setAttribute('aria-pressed', 'true');
+    } catch (error) {}
+  } else {
+    bgAudio.pause();
+    musicToggle.textContent = '♫';
+    musicToggle.setAttribute('aria-pressed', 'false');
+  }
+});
+
+function createCelebration() {
+  const symbols = ['✿', '❀', '❁', '✦', '❤'];
+  for (let i = 0; i < 34; i++) {
+    const el = document.createElement('span');
+    el.className = 'celebration-flower';
+    el.textContent = symbols[i % symbols.length];
+    el.style.left = `${Math.random() * 100}vw`;
+    el.style.top = `${-10 - Math.random() * 20}px`;
+    el.style.fontSize = `${18 + Math.random() * 16}px`;
+    el.style.animationDuration = `${2.4 + Math.random() * 1.6}s`;
+    el.style.transform = `rotate(${Math.random() * 360}deg)`;
+    celebrationLayer.appendChild(el);
+    setTimeout(() => el.remove(), 4200);
+  }
+}
+
+function openInvite() {
+  openInviteBtn.classList.add('hidden');
+  envelopeWrap.classList.add('open');
+
+  setTimeout(() => {
+    envelopeWrap.remove();
+    createCelebration();
+    contentSection.classList.remove('hidden');
+    contentSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 950);
+}
+
+openInviteBtn.addEventListener('click', openInvite);
+
+setLanguage('en');
+tryAutoplay();
