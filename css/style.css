@@ -20,15 +20,18 @@ body {
 
 body.hindi-mode { font-family: 'Noto Sans Devanagari', sans-serif; }
 
-.page-shell { min-height: 100vh; padding: 12px; }
+/* Added top padding so the floating buttons don't cover the very top of the content */
+.page-shell { min-height: 100vh; padding: 12px; padding-top: 64px; }
 
+/* Made the topbar floating */
 .topbar {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
-  margin-bottom: 12px;
-  position: relative;
-  z-index: 20;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
 }
 
 .icon-btn {
@@ -149,18 +152,18 @@ body.hindi-mode { font-family: 'Noto Sans Devanagari', sans-serif; }
 /* Stamp Styles */
 .envelope-stamp {
   position: absolute;
-  top: 52%; /* Positions exactly at the tip of the flap */
+  top: 52%; 
   left: 50%;
   transform: translate(-50%, -50%);
   width: 200px;
   height: auto;
   z-index: 10;
-  transition: opacity 0.3s ease; /* Smooth fade when opened */
+  transition: opacity 0.3s ease; 
   filter: drop-shadow(0 3px 6px rgba(0,0,0,0.15));
 }
 
 .envelope-wrap.open .envelope.flap { transform: rotateX(180deg) translateY(-6px); }
-.envelope-wrap.open .envelope-stamp { opacity: 0; } /* Fades the stamp on open */
+.envelope-wrap.open .envelope-stamp { opacity: 0; } 
 .envelope-wrap.open { opacity: 0; transform: scale(0.8); pointer-events: none; }
 
 .celebration-layer {
