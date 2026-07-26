@@ -124,3 +124,31 @@ openInviteBtn.addEventListener('click', openInvite);
 
 setLanguage('en');
 tryAutoplay();
+
+// --- NEW FEATURE: Pause audio when changing tabs or minimizing the browser ---
+let wasPlayingBeforeHide = false;
+
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    // If the tab becomes hidden, check if music is playing and pause it
+    if (!bgAudio.paused) {
+      wasPlayingBeforeHide = true;
+      bgAudio.pause();
+      musicToggle.textContent = '♫';
+      musicToggle.setAttribute('aria-pressed', 'false');
+    } else {
+      wasPlayingBeforeHide = false;
+    }
+  } else {
+    // If the user returns to the tab, resume the music ONLY if it was playing before
+    if (wasPlayingBeforeHide) {
+      bgAudio.play().then(() => {
+        musicToggle.textContent = '❚❚';
+        musicToggle.setAttribute('aria-pressed', 'true');
+      }).catch(error => {
+        // Handle edge case where mobile browsers block autoplay upon returning
+        console.log("Autoplay blocked upon returning to tab", error);
+      });
+    }
+  }
+});
