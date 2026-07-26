@@ -104,16 +104,19 @@ function openInvite() {
   openInviteBtn.classList.add('hidden');
   envelopeWrap.classList.add('open');
 
-  // Trigger music playback automatically when the envelope opens
   if (bgAudio.paused) {
     tryAutoplay();
   }
 
   setTimeout(() => {
-    envelopeWrap.remove();
+    // Hide the envelope stage entirely so the space is reclaimed by the invite
+    document.getElementById('envelopeStage').style.display = 'none';
+    
     createCelebration();
     contentSection.classList.remove('hidden');
-    contentSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    
+    // Automatically jump perfectly to the top of the newly displayed invite
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }, 950);
 }
 
