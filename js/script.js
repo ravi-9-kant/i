@@ -104,6 +104,11 @@ function openInvite() {
   openInviteBtn.classList.add('hidden');
   envelopeWrap.classList.add('open');
 
+  // Trigger music playback automatically when the envelope opens
+  if (bgAudio.paused) {
+    tryAutoplay();
+  }
+
   setTimeout(() => {
     envelopeWrap.remove();
     createCelebration();
