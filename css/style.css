@@ -287,11 +287,11 @@ body.hindi-mode { font-family: 'Noto Sans Devanagari', sans-serif; }
   font-family: 'Parisienne', cursive;
   font-size: 2.4rem;
   font-weight: 400;
-  color: var(--maroon);
+  color: blue; /* Changed from var(--maroon) */
   line-height: 1.1;
 }
 
-.name-script.bride { color: #8a5a18; }
+.name-script.bride { color: blue; } /* Changed from #8a5a18 */
 
 .detail-line {
   font-family: 'Libre Baskerville', serif;
