@@ -146,7 +146,7 @@ body.hindi-mode { font-family: 'Noto Sans Devanagari', sans-serif; }
   z-index: 5;
 }
 
-/* Added Stamp Styles */
+/* Stamp Styles */
 .envelope-stamp {
   position: absolute;
   top: 52%; /* Positions exactly at the tip of the flap */
@@ -287,13 +287,12 @@ body.hindi-mode { font-family: 'Noto Sans Devanagari', sans-serif; }
   font-family: 'Parisienne', cursive;
   font-size: 2.4rem;
   font-weight: 400;
-  color: blue; /* Changed from var(--maroon) */
+  color: blue;
   line-height: 1.1;
 }
 
-.name-script.bride { color: blue; } /* Changed from #8a5a18 */
+.name-script.bride { color: blue; }
 
-/* Added styling for the name image replacement */
 .name-img {
   width: 100%;
   max-width: 250px;
