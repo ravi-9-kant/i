@@ -20,10 +20,8 @@ body {
 
 body.hindi-mode { font-family: 'Noto Sans Devanagari', sans-serif; }
 
-/* Added top padding so the floating buttons don't cover the very top of the content */
 .page-shell { min-height: 100vh; padding: 12px; padding-top: 64px; }
 
-/* Made the topbar floating */
 .topbar {
   display: flex;
   justify-content: flex-end;
@@ -149,7 +147,6 @@ body.hindi-mode { font-family: 'Noto Sans Devanagari', sans-serif; }
   z-index: 5;
 }
 
-/* Stamp Styles */
 .envelope-stamp {
   position: absolute;
   top: 52%; 
@@ -242,13 +239,14 @@ body.hindi-mode { font-family: 'Noto Sans Devanagari', sans-serif; }
 }
 
 .mantra-title {
-  font-family: 'Marcellus', serif;
+  font-family: 'Noto Sans Devanagari', sans-serif;
   font-size: 1.15rem;
   letter-spacing: 0.08em;
   font-weight: 800;
 }
 
 .mantra-text {
+  font-family: 'Noto Sans Devanagari', sans-serif;
   margin-top: 4px;
   font-size: 0.98rem;
   line-height: 1.6;
@@ -269,7 +267,17 @@ body.hindi-mode { font-family: 'Noto Sans Devanagari', sans-serif; }
 }
 
 .script-line {
-  font-family: 'Marcellus', serif;
+  font-family: 'Alex Brush', cursive;
+  font-size: 2.3rem;
+  color: #9a6739;
+  text-align: center;
+  margin: 0 0 5px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.script-line-hi {
+  font-family: 'Noto Sans Devanagari', sans-serif;
   font-size: 1.25rem;
   color: #9a6739;
   text-align: center;
@@ -287,14 +295,27 @@ body.hindi-mode { font-family: 'Noto Sans Devanagari', sans-serif; }
 .name-line { text-align: center; }
 
 .name-script {
-  font-family: 'Parisienne', cursive;
-  font-size: 2.4rem;
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
   font-weight: 400;
-  color: blue;
+  color: var(--maroon);
   line-height: 1.1;
+  display: block;
+  margin-bottom: 5px;
 }
 
-.name-script.bride { color: blue; }
+.name-script-hi {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--maroon);
+  line-height: 1.1;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.name-script.bride { color: #8a5a18; }
+.name-script-hi.bride { color: #8a5a18; }
 
 .name-img {
   width: 100%;
@@ -314,9 +335,18 @@ body.hindi-mode { font-family: 'Noto Sans Devanagari', sans-serif; }
 }
 
 .to-label {
-  font-family: 'Marcellus', serif;
-  color: #D90404;
-  margin: 4px 0 10px;
+  font-family: 'Ephesis', cursive;
+  font-size: 2.6rem;
+  color: #9b6a37;
+  margin: -5px 0 0;
+  font-weight: 400;
+  text-align: center;
+}
+
+.to-label-hi {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  color: #9b6a37;
+  margin: 8px 0 12px;
   letter-spacing: 0.12em;
   font-weight: 800;
   text-align: center;
@@ -359,7 +389,16 @@ body.hindi-mode { font-family: 'Noto Sans Devanagari', sans-serif; }
   text-align: center;
 }
 
-.thankyou-panel h3 {
+.thankyou-script {
+  font-family: 'MonteCarlo', cursive;
+  margin: 0 0 5px;
+  color: var(--maroon);
+  font-size: 3.5rem;
+  font-weight: 400;
+}
+
+.thankyou-panel h3.hindi-only {
+  font-family: 'Noto Sans Devanagari', sans-serif;
   margin: 0 0 10px;
   color: var(--maroon);
   font-size: 1.8rem;
@@ -451,7 +490,17 @@ body.hindi-mode { font-family: 'Noto Sans Devanagari', sans-serif; }
   color: var(--maroon);
 }
 
-.countdown-title {
+.countdown-title.english-only {
+  font-family: 'Carattere', cursive;
+  color: var(--maroon);
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.countdown-title.hindi-only {
+  font-family: 'Noto Sans Devanagari', sans-serif;
   color: var(--maroon);
   text-align: center;
   font-size: 1.1rem;
@@ -497,7 +546,7 @@ body.hindi-mode { font-family: 'Noto Sans Devanagari', sans-serif; }
 
 .clock-box span {
   display: block;
-  font-family: 'Marcellus', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.6rem;
   font-weight: 800;
   letter-spacing: 0.06em;
@@ -564,8 +613,10 @@ body.hindi-mode { font-family: 'Noto Sans Devanagari', sans-serif; }
 }
 
 @media (min-width: 1024px) {
-  .script-line { font-size: 1.9rem; }
-  .name-script { font-size: 2.8rem; }
+  .script-line { font-size: 3rem; }
+  .name-script { font-size: 4.5rem; }
   .details-lead { font-size: 1.12rem; }
   .clock-box span { font-size: 2rem; }
+  .thankyou-script { font-size: 4.5rem; }
+  .countdown-title.english-only { font-size: 3.8rem; }
 }
