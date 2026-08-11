@@ -16,13 +16,13 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Parisienne&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Caramel&family=Carattere&family=Ephesis&family=Great+Vibes&family=MonteCarlo&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body class="hindi-mode">
   <div class="page-shell">
     <header class="topbar">
-      <button id="langToggle" class="icon-btn lang-btn" type="button" aria-label="Switch to Hindi">हि</button>
+      <button id="langToggle" class="icon-btn lang-btn" type="button" aria-label="Switch to English">EN</button>
       <button id="musicToggle" class="icon-btn music-btn" type="button" aria-label="Play music" aria-pressed="false">♫</button>
     </header>
 
@@ -36,7 +36,10 @@
         <div class="floating-petal petal-3"></div>
         <div class="floating-petal petal-4"></div>
 
-        <button class="open-invite-btn" id="openInviteBtn" type="button">Open Invite</button>
+        <button class="open-invite-btn" id="openInviteBtn" type="button">
+          <span class="english-only hidden">Open Invite</span>
+          <span class="hindi-only">निमंत्रण खोलें</span>
+        </button>
 
         <div class="envelope-wrap" id="envelopeWrap" aria-hidden="true">
           <div class="envelope back"></div>
@@ -46,7 +49,6 @@
         </div>
       </section>
 
-      <!-- Celebration layer moved outside envelope stage so it remains visible -->
       <div class="celebration-layer" id="celebrationLayer" aria-hidden="true"></div>
 
       <section class="content-section hidden" id="contentSection">
@@ -69,38 +71,38 @@
 
           <img src="assets/images/baarat.png" alt="Baarat" class="baarat-image" />
 
-          <section class="intro-block english-only">
+          <section class="intro-block english-only hidden">
             <p class="script-line">With the heavenly blessings of the Almighty,</p>
             <p class="lead-line">Two hearts, two families, and one beautiful destiny are coming together.</p>
             <p>Mrs. Rekha Singh &amp; Mr. Laxman Singh joyfully invite you to celebrate the marriage of their beloved son</p>
           </section>
 
-          <section class="intro-block hindi-only hidden">
-            <p class="script-line">परमपिता परमात्मा की असीम अनुकम्पा से,</p>
+          <section class="intro-block hindi-only">
+            <p class="script-line-hi">परमपिता परमात्मा की असीम अनुकम्पा से,</p>
             <p class="lead-line">दो हृदय, दो परिवार, और एक सुंदर नियति एक साथ आ रही है।</p>
             <p>श्रीमती रेखा सिंह एवं श्री लक्ष्मण सिंह अपने प्रिय सुपुत्र के विवाह उत्सव में आपको सादर निमंत्रित करते हैं।</p>
           </section>
 
           <section class="names-panel">
-            <div class="name-line english-only">
+            <div class="name-line english-only hidden">
               <img src="assets/images/RaviEn.png" alt="Ravi Kant" class="name-img" />
               <div class="detail-line">Grand son of<br>Late Mrs. Atar Kali &amp; Late Mr. Tara Chand</div>
             </div>
 
-            <div class="name-line hindi-only hidden">
+            <div class="name-line hindi-only">
               <img src="assets/images/RaviHi.png" alt="चि० रवि कान्त" class="name-img" />
               <div class="detail-line">स्व० श्रीमती अतर कली एवं स्व० श्री तारा चन्द के<br>सुपौत्र</div>
             </div>
 
-            <div class="to-label english-only">— to —</div>
-            <div class="to-label hindi-only hidden">— संग —</div>
+            <div class="to-label english-only hidden">— to —</div>
+            <div class="to-label-hi hindi-only">— संग —</div>
 
-            <div class="name-line english-only">
+            <div class="name-line english-only hidden">
               <img src="assets/images/ApurvaEn.png" alt="Apurva" class="name-img" />
               <div class="detail-line">D/O Mrs. Bobesh Dhiman &amp; Mr. Susheel Kumar<br>Grand daughter of<br>Late Mrs. Baladevi &amp; Late Mr. Raghunath Dhiman</div>
             </div>
 
-            <div class="name-line hindi-only hidden">
+            <div class="name-line hindi-only">
               <img src="assets/images/ApurvaHi.png" alt="आयु० अपूर्वा" class="name-img" />
               <div class="detail-line">श्रीमती बोबेश धीमान एवं श्री सुशील कुमार की पुत्री<br>स्व० श्री रघुनाथ धीमान एवं स्व० श्रीमती बालादेवी की<br>सुपौत्री</div>
             </div>
@@ -119,10 +121,10 @@
           </section>
 
           <section class="details-panel">
-            <div class="details-lead english-only">
+            <div class="details-lead english-only hidden">
               Love is a journey best shared with those who mean the most. We would be absolutely honored to have you join us, bless the newlyweds, and make this day unforgettable.
             </div>
-            <div class="details-lead hindi-only hidden">
+            <div class="details-lead hindi-only">
               प्रेम एक ऐसी यात्रा है जिसे अपने प्रियजनों के साथ साझा करना सबसे सुंदर होता है। आपकी उपस्थिति, आशीर्वाद और स्नेह इस दिन को अविस्मरणीय बना देंगे।
             </div>
 
@@ -130,29 +132,29 @@
               
               <div class="event-group">
                 <div class="event-box">
-                  <span class="event-label english-only">When</span>
-                  <span class="event-label hindi-only hidden">समय</span>
-                  <strong class="event-value english-only">Tuesday, 24th November 2026</strong>
-                  <strong class="event-value hindi-only hidden">मंगलवार, 24 नवम्बर 2026</strong>
+                  <span class="event-label english-only hidden">When</span>
+                  <span class="event-label hindi-only">समय</span>
+                  <strong class="event-value english-only hidden">Tuesday, 24th November 2026</strong>
+                  <strong class="event-value hindi-only">मंगलवार, 24 नवम्बर 2026</strong>
                   
-                  <small class="english-only">6:00 PM - Baarat      |      8:00 PM - Dinner</small>
-                  <small class="hindi-only hidden">शाम 6:00 बजे - बारात      |      रात 8:00 बजे - रात्रिभोज</small>
+                  <small class="english-only hidden">6:00 PM - Baarat      |      8:00 PM - Dinner</small>
+                  <small class="hindi-only">शाम 6:00 बजे - बारात      |      रात 8:00 बजे - रात्रिभोज</small>
                 </div>
                 <img src="assets/images/november.png" alt="November 2026 Calendar" class="calendar-preview" />
               </div>
 
               <div class="event-group">
                 <div class="event-box">
-                  <span class="event-label english-only">Where</span>
-                  <span class="event-label hindi-only hidden">स्थान</span>
-                  <strong class="event-value english-only">
+                  <span class="event-label english-only hidden">Where</span>
+                  <span class="event-label hindi-only">स्थान</span>
+                  <strong class="event-value english-only hidden">
                     <a href="https://maps.app.goo.gl/Ud8oNFg3giiPdD5u5" target="_blank" rel="noopener" class="venue-link">Abhinandan Palace</a>
                   </strong>
-                  <strong class="event-value hindi-only hidden">
+                  <strong class="event-value hindi-only">
                     <a href="https://maps.app.goo.gl/Ud8oNFg3giiPdD5u5" target="_blank" rel="noopener" class="venue-link">अभिनन्दन पैलेस</a>
                   </strong>
-                  <small class="english-only">State Highway 59, Roorkee Road, Muzaffarnagar</small>
-                  <small class="hindi-only hidden">स्टेट हाईवे 59, रूड़की रोड, मुज़फ्फरनगर</small>
+                  <small class="english-only hidden">State Highway 59, Roorkee Road, Muzaffarnagar</small>
+                  <small class="hindi-only">स्टेट हाईवे 59, रूड़की रोड, मुज़फ्फरनगर</small>
                 </div>
                 <div class="map-container">
                   <iframe 
@@ -168,20 +170,20 @@
 
             </div>
 
-            <p class="closing-note english-only">Host: Mr. Laxman Singh</p>
-            <p class="closing-note hindi-only hidden">आयोजक: श्री लक्ष्मण सिंह</p>
+            <p class="closing-note english-only hidden">Host: Mr. Laxman Singh</p>
+            <p class="closing-note hindi-only">आयोजक: श्री लक्ष्मण सिंह</p>
           </section>
 
           <section class="thankyou-panel">
-            <h3 class="english-only">Thank You</h3>
-            <h3 class="hindi-only hidden">आभार</h3>
-            <p class="english-only">Your presence and blessings will make our celebration truly special.</p>
-            <p class="hindi-only hidden">आपकी उपस्थिति और आशीर्वाद हमारे उत्सव को और भी सुंदर बना देंगे।</p>
+            <h3 class="english-only thankyou-script hidden">Thank You</h3>
+            <h3 class="hindi-only">आभार</h3>
+            <p class="english-only hidden">Your presence and blessings will make our celebration truly special.</p>
+            <p class="hindi-only">आपकी उपस्थिति और आशीर्वाद हमारे उत्सव को और भी सुंदर बना देंगे।</p>
           </section>
 
           <section class="countdown-section">
-            <div class="countdown-title english-only">Countdown to the Wedding</div>
-            <div class="countdown-title hindi-only hidden">विवाह तक शेष समय</div>
+            <div class="countdown-title english-only hidden">Countdown to the Wedding</div>
+            <div class="countdown-title hindi-only">विवाह तक शेष समय</div>
 
             <div class="clock-shell">
               <div class="clock-glow clock-glow-a"></div>
@@ -197,8 +199,8 @@
 
           <section class="footer-actions">
             <a class="action-btn venue-btn" href="https://maps.app.goo.gl/Ud8oNFg3giiPdD5u5" target="_blank" rel="noopener">
-              <span class="btn-label english-only">Venue</span>
-              <span class="btn-label hindi-only hidden">विवाह स्थल</span>
+              <span class="btn-label english-only hidden">Venue</span>
+              <span class="btn-label hindi-only">विवाह स्थल</span>
             </a>
 
             <a class="action-btn wa-btn" href="https://wa.me/919454404754" target="_blank" rel="noopener" aria-label="WhatsApp 9454404754">
@@ -214,7 +216,7 @@
         </div>
       </section>
 
-      <audio id="bgAudio" preload="auto" loop autoplay playsinline>
+      <audio id="bgAudio" preload="auto" loop playsinline>
         <source src="assets/audio/music.mp3" type="audio/mpeg" />
       </audio>
     </main>
